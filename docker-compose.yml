@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: fyle_container
+    ports:
+      - "7755:7755"
+    environment:
+      - FLASK_APP=core/server.py
+    volumes:
+      - .:/app
+    command: ["bash", "run.sh"]
